@@ -33,6 +33,8 @@ public class Variables {
         int b=sc.nextInt();
         int sum=a+b;
         System.out.println("our sum is :"+sum);
+
+        
     }
     
 }
