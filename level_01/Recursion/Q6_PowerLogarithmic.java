@@ -1,4 +1,4 @@
-package level_01.recursion;
+package level_01.Recursion;
 import java.util.*;
 
 // 1. You are given a number x.

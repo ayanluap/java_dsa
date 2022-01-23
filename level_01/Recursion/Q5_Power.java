@@ -1,4 +1,4 @@
-package level_01.recursion;
+package level_01.Recursion;
 import java.util.*;
 
 public class Q5_Power {
