@@ -18,10 +18,33 @@ import java.util.*;
 
 public class Q16_GetKpc {
     public static void main(String[] args) throws Exception {
-        
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        System.out.println(getKPC(s));
     }
 
+    static String codes[]={".","abc","def","ghi","jkl","mno","pqrs","tu","vwx","yz"};
     public static ArrayList<String> getKPC(String str) {
-        return null;
+        if(str.length()==0) {
+            ArrayList<String> bres=new ArrayList<>();
+            bres.add("");
+            return bres;
+        } 
+
+        char curr=str.charAt(0);
+        String ros=str.substring(1);
+
+        ArrayList<String> rres=getKPC(ros);
+        ArrayList<String> mres=new ArrayList<>();
+
+        String s=codes[curr-'0'];
+        for(int i=0; i<s.length(); i++){
+            char c=s.charAt(i);
+            for(String x: rres){
+                mres.add(c+x);
+            }
+        }
+
+        return mres;
     }
 }
