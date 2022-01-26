@@ -9,27 +9,16 @@ public class SUBMEX {
             int len=sc.nextInt();
             int lenSub=sc.nextInt();
             int x=sc.nextInt();
-            ArrayList<Integer> arr=new ArrayList<>();
 
             if(x>lenSub) {
                 System.out.println(-1);
-                return;
-
-            } else {
+            } 
+            else {
                 for(int i=0; i<len; i++){
-                    int l=lenSub-i-1;
-                    if(l<x){
-                        arr.add(Math.abs(l));
-                    }else{
-                        l/=x;
-                        arr.add(Math.abs(l));
-                    }
+                    System.out.print(i%x+" ");
                 }
+                System.out.println();
             }
-
-
-            for(int i: arr) System.out.print(i+" ");
-            System.out.println();
             tc--;
         }
     }
