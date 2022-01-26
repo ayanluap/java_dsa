@@ -1,4 +1,4 @@
-package level_01.Recursion;
+package level_01.L1_Recursion;
 import java.util.*;
 
 // 1. You are given a positive number n. 

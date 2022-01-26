@@ -1,4 +1,4 @@
-package level_01.Recursion;
+package level_01.L1_Recursion;
 import java.util.*;
 
 // 1. There are 3 towers. Tower 1 has n disks, where n is a positive number. Tower 2 and 3 are empty.
