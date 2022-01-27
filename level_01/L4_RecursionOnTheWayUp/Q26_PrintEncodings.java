@@ -31,11 +31,11 @@ public class Q26_PrintEncodings {
         }else if(str.length()==1){
             char ch=str.charAt(0);
             int chToInt=ch-'0';
-            char intToCh=(char)('a'+chToInt-1);
+            String intToCh=(char)('a'+chToInt-1)+"";
             if(ch=='0'){
                 return;
             }else{
-                System.out.println(intToCh);
+                printEncodings(str.substring(1), ans+intToCh);
             }
         }else {
             String ch=str.substring(0,1);
@@ -45,19 +45,20 @@ public class Q26_PrintEncodings {
                 return;
             }else{
                 int chToInt=Integer.parseInt(ch);
+
                 char intToCh=(char)('a'+chToInt-1);
                 printEncodings(newStr1, ans+intToCh);
-            }
+            
 
             String ch2=str.substring(0,2);
             String newStr2=str.substring(2);
 
             int chToInt1=Integer.parseInt(ch2);
             if(chToInt1 <= 26){
-                char intToCh=(char)('a'+chToInt1-1);
-                printEncodings(newStr2, ans+intToCh);
+                char intToCh1=(char)('a'+chToInt1-1);
+                printEncodings(newStr2, ans+intToCh1);
             }
-
+        }
         }
         
         
