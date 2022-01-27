@@ -1,4 +1,4 @@
-// package cf.Jan22;
+package cf.Jan22;
 import  java.util.*;
 
 public class FunwithEvenSubarrays {
