@@ -22,10 +22,38 @@ public class Q29_NQueens {
         }
 
         for(int col=0; col<chess.length; col++){
-            chess[row][col]=1;
-            printNQueens(chess, qsf+row+"-"+col+", ", row+1);
-            chess[row][col]=0;
+            if(isQueenSafe(chess, row, col)==true){
+                chess[row][col]=1;
+                printNQueens(chess, qsf+row+"-"+col+", ", row+1);
+                chess[row][col]=0;
+            }
         }
 
+    }
+
+    public static boolean isQueenSafe(int chess[][], int row, int col){
+        for(int checkUp=row; checkUp>=0; checkUp--){
+            if(chess[checkUp][col]==1) return false;
+        }
+
+        // checking upper left diagonals
+        int rl=row-1; int cl=col-1;
+        while(rl>=0 && cl>=0){
+            if(chess[rl][cl]==1) return false;
+            else{
+                rl--; cl--;
+            }
+        }
+
+        // checking upper right diagonals
+        int rr=row-1; int cr=col+1;
+        while(rr>=0 && cr<chess.length){
+            if(chess[rr][cr]==1) return false;
+            else{
+                rr--; cr++;
+            }
+        }
+
+        return true;
     }
 }
