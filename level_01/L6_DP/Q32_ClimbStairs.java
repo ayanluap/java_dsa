@@ -6,7 +6,7 @@ import java.util.*;
 // 3. In one move, you are allowed to climb 1, 2 or 3 stairs.
 // 4. You are required to print the number of different paths via which you can climb to the top.
 
-public class Q31_ClimbStairs {
+public class Q32_ClimbStairs {
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
