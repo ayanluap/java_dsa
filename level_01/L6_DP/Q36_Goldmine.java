@@ -22,31 +22,30 @@ public class Q36_Goldmine {
 
         // Recursion
         Integer dp[][]=new Integer[n][m];
-        
-        int max=goldmineRec(maze, 0, 0, dp, Integer.MIN_VALUE);
+        int max=Integer.MIN_VALUE;
+
+        for(int r=0; r<maze.length; r++){
+            max=Math.max(max, goldmineRec(maze, r, 0, dp));
+        }
         System.out.println(max);
+
         System.out.println(goldmine(maze));
     }
 
     // using recursion
-    // public static int goldmineRec(int maze[][], int row, int col, Integer dp[][], int ans){
-    //     if(col==maze[0].length-1 && row<maze.length) return dp[row][col]=maze[row][col];
+    public static int goldmineRec(int maze[][], int row, int col, Integer dp[][]){
+        if(row>=maze.length || row<0) return 0;
 
-    //     if(dp[row][col]!=null) return dp[row][col];
-        
-    //     for(int i=0; i<maze.length; i++){
-    //         int rightUp=0;
-    //         int rightDown=0;
-    //         if(row>0) rightUp= goldmineRec(maze, row-1, col+1, dp, ans);
-    //         int right= goldmineRec(maze, row, col+1, dp, ans);
-    //         if(row<maze.length-1) rightDown= goldmineRec(maze, row+1, col+1, dp, ans);
+        if(col==maze[0].length-1) return dp[row][col]=maze[row][col];
 
-    //         dp[row][col]=maze[row][col]+Math.max(right, Math.max(rightUp,rightDown));
-    //         if (dp[row][col] > ans) ans=dp[row][col];
-    //     }
+        if(dp[row][col]!=null) return dp[row][col];
 
-    //     return ans;
-    // }
+        int rightUp= goldmineRec(maze, row-1, col+1, dp);
+        int right= goldmineRec(maze, row, col+1, dp);
+        int rightDown= goldmineRec(maze, row+1, col+1, dp);
+
+        return dp[row][col]=maze[row][col]+Math.max(right, Math.max(rightUp,rightDown));
+    }
 
     
 
