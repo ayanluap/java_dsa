@@ -9,7 +9,7 @@ import java.util.*;
 
 // Note2 -> You are required to find the count of permutations and not combinations i.e.2 + 2 + 3 = 7 and 2 + 3 + 2 = 7 and 3 + 2 + 2 = 7 are different permutations of same combination. You should treat them as 3 and not 1.
 
-public class Q38_CoinChangePermutations {
+public class Q38_CoinChangeCombinations {
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
