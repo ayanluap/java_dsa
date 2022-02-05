@@ -1,4 +1,4 @@
-
+package L6_DP;
 import java.util.*;
 
 // 1. You are given a number n, representing the number of rows.

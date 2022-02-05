@@ -1,4 +1,4 @@
-package level_01.L2_RecursionInArrays;
+package L2_RecursionInArrays;
 import java.util.*;
 
 // 1. You are given a number n, representing the count of elements.

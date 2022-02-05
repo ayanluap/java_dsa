@@ -1,4 +1,4 @@
-package level_01.L3_RecursionWithArrayList;
+package L3_RecursionWithArrayList;
 import java.util.*;
 
 // 1. You are given a number n and a number m representing number of rows and columns in a maze.

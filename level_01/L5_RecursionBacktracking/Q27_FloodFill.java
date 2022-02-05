@@ -1,4 +1,4 @@
-package level_01.L5_RecursionBacktracking;
+package L5_RecursionBacktracking;
 import java.util.*;
 
 // 1. You are given a number n, representing the number of rows.

@@ -1,4 +1,4 @@
-package level_01.L4_RecursionOnTheWayUp;
+package L4_RecursionOnTheWayUp;
 import java.util.*;
 
 // 1. You are given a number n representing number of stairs in a staircase.

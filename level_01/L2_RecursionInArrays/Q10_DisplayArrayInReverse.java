@@ -1,4 +1,4 @@
-package level_01.L2_RecursionInArrays;
+package L2_RecursionInArrays;
 import java.util.*;
 
 public class Q10_DisplayArrayInReverse {

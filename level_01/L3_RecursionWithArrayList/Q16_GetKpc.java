@@ -1,4 +1,4 @@
-package level_01.L3_RecursionWithArrayList;
+package L3_RecursionWithArrayList;
 import java.util.*;
 
 // 1. You are given a string str. The string str will contains numbers only, where each number stands for a key pressed on a mobile phone.
