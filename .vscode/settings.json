@@ -1,8 +1,5 @@
 {
   "java.project.sourcePaths": ["Basic_01", "level_01"],
   "editor.suggestOnTriggerCharacters": false,
-  "grunt.autoDetect": "off",
-  "gulp.autoDetect": "off",
-  "jake.autoDetect": "off",
   "emmet.showSuggestionsAsSnippets": false
 }
