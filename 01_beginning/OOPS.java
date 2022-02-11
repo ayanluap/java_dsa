@@ -1,4 +1,4 @@
-package beginning;
+
 
 
 class Student{

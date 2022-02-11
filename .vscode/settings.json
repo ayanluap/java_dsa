@@ -1,5 +1,5 @@
 {
-  "java.project.sourcePaths": ["Basic_01", "level_01"],
+  "java.project.sourcePaths": ["Basic_01", "level_01", "01_beginning"],
   "editor.suggestOnTriggerCharacters": false,
   "emmet.showSuggestionsAsSnippets": false
 }

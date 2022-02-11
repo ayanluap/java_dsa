@@ -1,4 +1,4 @@
-package beginning;
+
 import java.util.*;
 
 public class StringsAdv {
