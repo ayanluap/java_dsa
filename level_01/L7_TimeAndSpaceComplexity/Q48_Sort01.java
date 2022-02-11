@@ -1,24 +1,19 @@
 package L7_TimeAndSpaceComplexity;
 import java.util.*;
 
-// 1. You are given an array(arr) containing only 0's, 1's, and 2's.
+// 1. You are given an array(arr) containing only 0's and 1's.
 // 2. You have to sort the given array in increasing order and in linear time.
 
-public class Q47_Sort012 {
-    public static void sort012(int[] arr){
+public class Q48_Sort01 {
+    public static void sort01(int[] arr){
         //write your code here
         int i=0; int k=i; int j=arr.length-1;
-        
-        while(k<j){
-            if(arr[k]==0){
+        while(k<=j){
+            if(arr[k]==0) {
                 swap(arr, k, i);
-                i++;
-                k++;
+                i++; k++;
             }else if(arr[k]==1){
                 k++;
-            }else if(arr[k]==2){
-                swap(arr, k, j);
-                j--;
             }
         }
         
@@ -44,8 +39,7 @@ public class Q47_Sort012 {
         for(int i = 0 ;i < n; i++){
           arr[i] = scn.nextInt();
         }
-        sort012(arr);
+        sort01(arr);
         print(arr);
       }
-    
 }
