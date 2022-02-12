@@ -7,11 +7,34 @@ import java.util.*;
 public class Q49_RadixSort {
     public static void radixSort(int[] arr) {
         // write code here  
-          
+          int max=Integer.MIN_VALUE;
+          for(int x: arr) if(x>max) max=x;
+          int maxPlace=1;
+
+          while(maxPlace<=max){
+            countSort(arr, maxPlace);
+
+            maxPlace*=10;
+            // max/=10;
+          }
       }
     
       public static void countSort(int[] arr, int exp) {
         // write code here
+        int digitArr[]=new int[10];
+        int duplicate[]=new int[arr.length];
+
+        for(int i=0; i<arr.length; i++){
+          digitArr[(arr[i]/exp) % 10]++;
+        }
+        for(int i=0; i<digitArr.length-1; i++) digitArr[i+1]+=digitArr[i];
+        for(int i=arr.length-1; i>=0; i--){
+          digitArr[(arr[i]/exp) % 10]--;
+          duplicate[digitArr[(arr[i]/exp) % 10]]=arr[i];
+        }
+
+        for(int i=0; i<arr.length; i++) arr[i]=duplicate[i]; 
+
         System.out.print("After sorting on " + exp + " place -> ");
         print(arr);
       }
