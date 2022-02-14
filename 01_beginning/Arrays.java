@@ -22,4 +22,7 @@ public class Arrays {
         // int matrix[][]=new int[2][3];
         
     }
+
+    public static void fill(int[] res, int i) {
+    }
 }

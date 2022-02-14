@@ -3,7 +3,7 @@ import java.util.*;
 // 1. You are given a string exp representing an expression.
 // 2. You are required to check if the expression is balanced i.e. closing brackets and opening brackets match up well.
 
-public class Q61_BalancedBrackets {
+public class Q62_BalancedBrackets {
     public static void main(String[] args) throws Exception {
         Scanner sc=new Scanner(System.in);
         String s=sc.nextLine();
