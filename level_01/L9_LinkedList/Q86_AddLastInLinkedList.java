@@ -1,6 +1,8 @@
 package L9_LinkedList;
 import java.io.*;
 
+
+
 public class Q86_AddLastInLinkedList {
     public static class Node {
         int data;
