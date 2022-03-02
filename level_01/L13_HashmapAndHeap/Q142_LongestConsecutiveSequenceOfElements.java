@@ -35,14 +35,16 @@ public class Q142_LongestConsecutiveSequenceOfElements {
         int msp=0; // final starting point
     
         for(int val: a) {
-            int tl=1;   // temp length
-            int tsp=val; // temp starting point
-    
-            while(hm.containsKey(tsp + tl)) tl++;
-    
-            if(tl > ml) {
-                msp= tsp;
-                ml= tl;
+            if(hm.get(val)==true){
+                int tl=1;   // temp length
+                int tsp=val; // temp starting point
+        
+                while(hm.containsKey(tsp + tl)) tl++;
+        
+                if(tl > ml) {
+                    msp= tsp;
+                    ml= tl;
+                }
             }
         }
     
