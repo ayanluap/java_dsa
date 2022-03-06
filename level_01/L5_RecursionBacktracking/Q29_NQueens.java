@@ -14,6 +14,8 @@ public class Q29_NQueens {
         printNQueens(chessBoard, "", 0);
     }
 
+
+    // USING SOME EXTRA COMPLEXITY ----(NOT OPTIMISED)
     public static void printNQueens(int[][] chess, String qsf, int row) {
         if(row==chess.length) {
             qsf+=".";
