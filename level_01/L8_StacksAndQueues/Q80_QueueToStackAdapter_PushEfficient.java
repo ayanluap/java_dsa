@@ -1,4 +1,5 @@
 package L8_StacksAndQueues;
+
 import java.io.*;
 import java.util.*;
 
@@ -20,84 +21,86 @@ import java.util.*;
 // Pop k lie v same bs ek bche to use uda do
 
 public class Q80_QueueToStackAdapter_PushEfficient {
-    public static class QueueToStackAdapter {
-        Queue<Integer> mainQ;
-        Queue<Integer> helperQ;
-    
-        public QueueToStackAdapter() {
-          mainQ = new ArrayDeque<>();
-          helperQ = new ArrayDeque<>();
+  public static class QueueToStackAdapter {
+    Queue<Integer> mainQ;
+    Queue<Integer> helperQ;
+
+    public QueueToStackAdapter() {
+      mainQ = new ArrayDeque<>();
+      helperQ = new ArrayDeque<>();
+    }
+
+    int size() {
+      // write your code here
+      return mainQ.size();
+    }
+
+    void push(int val) {
+      // write your code here
+      mainQ.add(val);
+    }
+
+    int pop() {
+      // write your code here
+      int res = -1;
+      if (size() == 0)
+        System.out.println("Queue underflow");
+      else {
+        while (size() != 1) {
+          helperQ.add(mainQ.remove());
         }
-    
-        int size() {
-          // write your code here
-          return mainQ.size();
-        }
-    
-        void push(int val) {
-          // write your code here
-          mainQ.add(val);
-        }
-    
-        int pop() {
-          // write your code here
-          int res=-1;
-          if(size()==0) System.out.println("Queue underflow");
-          else {
-            while(size()!=1) {
-              helperQ.add(mainQ.remove());
-            }
-            res= mainQ.remove();
-            while(!helperQ.isEmpty()){
-              mainQ.add(helperQ.remove());
-            }
-          }
-    
-          return res;
-        }
-    
-        int top() {
-          // write your code here
-          int res=-1;
-          if(size()==0) System.out.println("Queue underflow");
-          else {
-            while(size()!=1) {
-              helperQ.add(mainQ.remove());
-            }
-            res= mainQ.peek();
-            helperQ.add(mainQ.remove());
-            while(!helperQ.isEmpty()){
-              mainQ.add(helperQ.remove());
-            }
-          }
-    
-          return res;
+        res = mainQ.remove();
+        while (!helperQ.isEmpty()) {
+          mainQ.add(helperQ.remove());
         }
       }
-    
-      public static void main(String[] args) throws Exception {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        QueueToStackAdapter st = new QueueToStackAdapter();
-    
-        String str = br.readLine();
-        while (str.equals("quit") == false) {
-          if (str.startsWith("push")) {
-            int val = Integer.parseInt(str.split(" ")[1]);
-            st.push(val);
-          } else if (str.startsWith("pop")) {
-            int val = st.pop();
-            if (val != -1) {
-              System.out.println(val);
-            }
-          } else if (str.startsWith("top")) {
-            int val = st.top();
-            if (val != -1) {
-              System.out.println(val);
-            }
-          } else if (str.startsWith("size")) {
-            System.out.println(st.size());
-          }
-          str = br.readLine();
+
+      return res;
+    }
+
+    int top() {
+      // write your code here
+      int res = -1;
+      if (size() == 0)
+        System.out.println("Queue underflow");
+      else {
+        while (size() != 1) {
+          helperQ.add(mainQ.remove());
+        }
+        res = mainQ.peek();
+        helperQ.add(mainQ.remove());
+        while (!helperQ.isEmpty()) {
+          mainQ.add(helperQ.remove());
         }
       }
+
+      return res;
+    }
+  }
+
+  public static void main(String[] args) throws Exception {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    QueueToStackAdapter st = new QueueToStackAdapter();
+
+    String str = br.readLine();
+    while (str.equals("quit") == false) {
+      if (str.startsWith("push")) {
+        int val = Integer.parseInt(str.split(" ")[1]);
+        st.push(val);
+      } else if (str.startsWith("pop")) {
+        int val = st.pop();
+        if (val != -1) {
+          System.out.println(val);
+        }
+      } else if (str.startsWith("top")) {
+        int val = st.top();
+        if (val != -1) {
+          System.out.println(val);
+        }
+      } else if (str.startsWith("size")) {
+        System.out.println(st.size());
+      }
+      str = br.readLine();
+    }
+  }
 }
