@@ -1,5 +1,7 @@
 package L2_ArraysAndStrings;
 
+import java.util.*;
+
 // 1. You have a matrix of M*N Dimension.
 // 2. You have to return a Transpose matrix, where The transpose of a matrix is the matrix flipped over its main diagonal.
 

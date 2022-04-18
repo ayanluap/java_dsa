@@ -1,6 +1,8 @@
 package L2_ArraysAndStrings;
 
-public class Q182_TransposeOfMatrixWithDimensionNXN {
+import java.util.*;
+
+public class Q183_TransposeOfMatrixWithDimensionNXN {
     // ~~~~~~~~~~~~~User Section~~~~~~~~~~~~~
     public static void transpose(int[][] matrix) {
         // write your code here
