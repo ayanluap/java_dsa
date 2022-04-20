@@ -15,21 +15,34 @@ public class Q192_ValidPalindrome2 {
         // write your code here
         int i = 0;
         int j = s.length() - 1;
-        int count = 0;
+        boolean res1 = true;
+        boolean res2 = true;
 
         while (i < j) {
             if (s.charAt(i) != s.charAt(j)) {
-                if (s.charAt(i + 1) == s.charAt(j) || s.charAt(j - 1) == s.charAt(i))
-                    count++;
-                else
-                    return false;
+                res1 = chkPalindrome(s.substring(i + 1, j + 1));
+                res2 = chkPalindrome(s.substring(i, j));
+                break;
             }
             i++;
             j--;
         }
 
-        if (count > 1)
+        if (res1 || res2)
+            return true;
+        else
             return false;
+    }
+
+    public static boolean chkPalindrome(String s) {
+        int i = 0, j = s.length() - 1;
+        while (i < j) {
+            if (s.charAt(i) != s.charAt(j))
+                return false;
+            i++;
+            j--;
+        }
+
         return true;
     }
 
